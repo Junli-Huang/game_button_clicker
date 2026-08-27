@@ -68,6 +68,7 @@ export class IncrementalEngine {
     this.now += deltaSeconds;
     for (const entity of this.entities.values()) {
       for (const trigger of entity.components.autoTrigger?.triggers ?? []) {
+        if (!trigger.enabled) continue;
         trigger.elapsed += deltaSeconds;
         while (trigger.elapsed >= trigger.interval) {
           trigger.elapsed -= trigger.interval;
