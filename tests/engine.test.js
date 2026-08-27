@@ -16,8 +16,16 @@ test('click advances stage and mature click grants resource', () => {
 
 test('auto trigger advances target and auto click uses target click behavior', () => {
   const engine = create();
+  engine.entity('auto-farmer').components.autoTrigger.triggers[0].enabled = true;
+  engine.entity('auto-clicker').components.autoTrigger.triggers[0].enabled = true;
   engine.tick(2);
   assert.equal(engine.stage('wheat-field').progress, 3);
+});
+
+test('auto triggers stay idle until explicitly enabled', () => {
+  const engine = create();
+  engine.tick(10);
+  assert.deepEqual(engine.stage('wheat-field'), { id: 'growing', progress: 0 });
 });
 
 test('effects are atomic when cumulative resource cost is unavailable', () => {
