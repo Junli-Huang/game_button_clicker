@@ -34,10 +34,10 @@ function appendLog(message) {
 
 document.querySelector('#field').addEventListener('click', () => engine.click('player', 'wheat-field'));
 document.querySelector('#auto-farmer').addEventListener('change', event => {
-  engine.entity('auto-farmer').components.autoTrigger.triggers[0].interval = event.target.checked ? 1 : Infinity;
+  engine.entity('auto-farmer').components.autoTrigger.triggers[0].enabled = event.target.checked;
 });
 document.querySelector('#auto-clicker').addEventListener('change', event => {
-  engine.entity('auto-clicker').components.autoTrigger.triggers[0].interval = event.target.checked ? 2 : Infinity;
+  engine.entity('auto-clicker').components.autoTrigger.triggers[0].enabled = event.target.checked;
 });
 
 let last = performance.now();
