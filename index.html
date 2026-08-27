@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="配置驱动、Mod 友好的 H5 点击增量游戏内核 V0.1">
+  <title>Incremental Engine V0.1</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main>
+    <header><span class="eyebrow">ENGINE PROTOTYPE / V0.1</span><h1>一块由配置驱动的麦田</h1><p>点击、阶段推进、资源增长和自动化，组成最小增量循环。</p></header>
+    <section class="resource"><span>仓库</span><strong><span id="wheat">0</span> 小麦</strong></section>
+    <button id="field" class="field" type="button" aria-label="点击麦田">
+      <span class="crop">🌾</span><span class="hint">点击麦田</span>
+      <strong id="stage">生长中</strong>
+      <progress id="progress" max="10" value="0"></progress><small id="progress-text">0 / 10</small>
+    </button>
+    <section class="automation">
+      <h2>自动化</h2>
+      <label><span><strong>自动农夫</strong><small>每秒增加 1 点进度</small></span><input id="auto-farmer" type="checkbox"></label>
+      <label><span><strong>自动点击器</strong><small>每 2 秒模拟一次点击</small></span><input id="auto-clicker" type="checkbox"></label>
+    </section>
+    <section class="events"><h2>事件日志</h2><ul id="log"><li>引擎已启动，等待第一次点击。</li></ul></section>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
