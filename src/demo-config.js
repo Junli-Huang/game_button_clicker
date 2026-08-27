@@ -37,13 +37,13 @@ export const demoConfig = {
     {
       id: 'auto-farmer', name: '自动农夫', components: {
         resources: { values: {} },
-        autoTrigger: { triggers: [{ interval: 1, actions: [{ target: { type: 'entityId', id: 'wheat-field' }, effects: [addProgress(1)] }] }] },
+        autoTrigger: { triggers: [{ enabled: false, interval: 1, actions: [{ target: { type: 'entityId', id: 'wheat-field' }, effects: [addProgress(1)] }] }] },
       },
     },
     {
       id: 'auto-clicker', name: '自动点击器', components: {
         clickExecutor: {}, resources: { values: {} },
-        autoTrigger: { triggers: [{ interval: 2, actions: [{ effects: [clickField] }] }] },
+        autoTrigger: { triggers: [{ enabled: false, interval: 2, actions: [{ effects: [clickField] }] }] },
       },
     },
   ],
